@@ -1,65 +1,71 @@
 import Image from "next/image";
-
+import { updates } from "./data/updates";
+  
 export default function Home() {
+  const sortedUpdates = [...updates].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+
+  const latestUpdates = sortedUpdates.slice(0, 3);
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <>
+    <div className="home-container">
+      <div className="home-image">
+          <img src="/images/headshot.png" alt="Sara Rigatti"/>
+              <div className="home-buttons">
+              <a href="/files/Sara_Rigatti_Resume.pdf" className="button" download>Download My Resume!</a>
+              <a href="https://www.linkedin.com/in/sara-rigatti-3955882a8/" target="_blank" className="icon-button" >
+                  <img src="/images/linkedin.png" alt="LinkedIn" />
+              </a>
+              <a href="https://github.com/rigattis" target="_blank" className="icon-button" >
+                  <img src="images/github.png" alt="GitHub" />
+              </a>
+              <a href="/contact/" className="icon-button">
+                  <img src="images/email.png" alt="Contact" />
+              </a>
+          </div>
+      </div>
+    <div className="home-text">
+         <h1>Sara C. Rigatti</h1>
+        <p>
+            Hello! My name is Sara Rigatti and I am a senior at Boston College pursuing a double major in Computer Science and Environmental Geoscience. I am passionate about using technology to collaborate, innovate, and understand our world in the face of climate change.
+        </p>
+        <p>
+            Throughout my academic and professional career, I have developed strong technical and analytical skills. I am knowledgeable in using, interpreting and applying various programming languages and tools such as Python, Java, C, Go, Verilog, and Django, which I have used in a number of academic subjects and personal projects. Additionally, I have had experience using tools such as ArcGIS Pro, environmental model outputs, and performing detailed analysis using Excel. During my internship experience at Wolf and Company, P.C., I gained exposure to IT systems, IT best practices, and the consulting space. 
+        </p>
+        <p>
+            Outide of my academic career, I serve as the President of EcoPledge of Boston College, the largest student-run sustainability organization on campus. I am also the Social Director for the University Chorale of Boston College, where I coordinate alumni outreach, plan all social events, and manage interal relations.
+        </p>
+        <p>
+            In my free time, I enjoy cooking, running, skiing, hiking, camping, photography, and board games. I love to travel, and have driven across the U.S. three times in the last three years. It is a goal of mine to visit all 63 national parks and all 50 states. So far, I have been to 17 national parks and 41 states!
+        </p>
     </div>
+</div>
+    <section className="updates-section">
+      <h2>Recent Updates</h2>
+
+      <div className="featured-updates">
+        {latestUpdates.map((update, index) => (
+          <div className="featured-update" key={index}>
+            <h3>{update.title}</h3>
+            <p>{update.description}</p>
+            <span className="update-date">{update.date}</span>
+          </div>
+        ))}
+      </div>
+
+      <h2>All Updates</h2>
+
+      <div className="all-updates">
+        {sortedUpdates.map((update, index) => (
+          <div className="update-item" key={index}>
+            <h3>{update.title}</h3>
+            <p>{update.description}</p>
+            <span className="update-date">{update.dateLabel}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  </>
   );
 }
