@@ -25,6 +25,7 @@ export default function ContactPage() {
         },
         () => {
           setError(true);
+          console.error("EmailJS error:", err);
           setSuccess(false);
         }
       );
