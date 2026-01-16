@@ -194,7 +194,7 @@ export default function ExperiencePage() {
             </p>
             <ul>
               <li>Plan, organize, and put on social events for 150 current organization members.</li>
-              <li> oordinate alumni outreach efforts including monthly newsletters, in-person events, and reunions.</li>
+              <li>Coordinate alumni outreach efforts including monthly newsletters, in-person events, and reunions.</li>
             </ul>
 
             <h3>Director of Marketing and Management</h3>
