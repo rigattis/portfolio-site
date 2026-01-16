@@ -160,19 +160,29 @@ export default function ExperiencePage() {
             </p>
             <ul>
               <li>Led largest student-run sustainability organization on campus</li>
-              <li>Managed initiatives, outreach, and partnerships</li>
-              <li>Oversaw executive board and strategy</li>
+              <li>Managed initiatives, outreach, and partnerships, oversaw executive board and strategy</li>
+              <li>Organize events, visitors, resources, and more for our members and the greater Boston College community.</li>
+              <li>Educate, advocate for, and engage with clean energy options, climate resilience, and sustainability planning.</li>
             </ul>
 
             <h3>Secretary</h3>
             <p className="resume-subtitle">
               Apr 2024 - Apr 2025
             </p>
+            <ul>
+              <li>Assist organization leaders with cross-campus communication, organization, and advocacy</li>
+              <li>Manage administrative and logistical tasks including weekly emails, space reservations, and various deadlines</li>
+            </ul>
 
             <h3>Director, Activism Committee</h3>
             <p className="resume-subtitle">
               Jan 2023 - Apr 2024
             </p>
+            <ul>
+              <li>Plan, organize, and lead environmental activism-related events (protests, tabling, etc.) on and off campus.</li>
+              <li>Collaborate with varying on-campus environmental groups (e.g., CJBC, UGBC, Campus Dining)</li>
+              <li>Facilitate EcoPledge Activism Meetings biweekly.</li>
+            </ul>
           </div>
 
           <div className="resume-item">
@@ -192,6 +202,7 @@ export default function ExperiencePage() {
             </p>
             <ul>
               <li>Managed ticket sales, programs, and marketing materials</li>
+              <li>Create informational graphic design elements for all concerts and events using Canva Pro</li>
             </ul>
           </div>
         </section>
