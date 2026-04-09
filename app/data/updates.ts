@@ -35,5 +35,23 @@ export const updates: Update[] = [
     description: "Successfully completed my summer internship, culminating with a exploratory presentation with managers in my team, and the completion of 6 engagements with various clients over the course of my employment.",
     date: "2025-08-09",
     dateLabel: "Aug. 8, 2025",
+  },
+  {
+    title: "Accepted post-grad full-time position with SYSO Technologies",
+    description: "Accepted a position as a Control Room Operator in the Rotational Experience Program at SYSO technologies, a renewable energy technology and services company located in Boston, MA.",
+    date: "2026-02-28",
+    dateLabel: "Feb. 28, 2026",
+  },
+  {
+    title: "Presented thesis research at Northeast GSA Conference",
+    description: "Presented a research poster describing my senior capstone research methods, results, and findings to an audience of 500 attendees at the Northeast GSA undergraduate poster session.",
+    date: "2026-03-22",
+    dateLabel: "Mar. 22, 2026",
+  },
+  {
+    title: "Accepted Invitation to Phi Beta Kappa Honor Society",
+    description: "Accepted invitation to PBK, the national academic honor society, signaling exceptional academic achievement. To be inducted May 17, 2026",
+    date: "2026-04-08",
+    dateLabel: "Apr. 8, 2026",
   }
 ]
